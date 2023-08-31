@@ -1,2 +1,2 @@
 #!/bin/bash
-chown school helo
+chown school hello
