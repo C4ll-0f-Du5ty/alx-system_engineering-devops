@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# extracting a specific info from a file
+while IFS=: read -r username _ usrid _ _ homedir _; do
+    echo "$username:$usrid:$homedir"
+done </etc/passwd
