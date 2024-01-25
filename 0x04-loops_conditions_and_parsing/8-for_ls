@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+# This script is displaying "Best School" 10 times
+for name in *; do
+    new="${name##*-}"
+    echo "$new"
+done
