@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+# Displaying all the process in user-oriented format plus grepping
+ps -A uxf | grep bash
