@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# Terminating the process by its ID
+PID=$(pgrep -f 4-to_infinity_and_beyond)
+kill -9 "$PID"
