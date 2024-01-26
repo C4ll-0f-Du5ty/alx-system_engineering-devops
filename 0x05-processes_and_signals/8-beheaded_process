@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# Force Terminating the process by its ID
+PID=$(pgrep -f 7-highlander)
+kill -9 "$PID"
