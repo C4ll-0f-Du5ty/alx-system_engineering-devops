@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+# making a loop and putting sleep time between iterations
+while true; do
+    echo "To infinity and beyond"
+    sleep 2
+done
