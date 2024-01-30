@@ -1,10 +1,10 @@
 #!/usr/bin/env ruby
 # Making my own Expression!
 
-arg = ARGV[0]
-
-if arg =~ /School/
-    puts "School"
-else
-    puts ""
+i = 0
+while ARGV[i]
+    if ARGV[i] =~ /School/
+        puts "School"
+    end
+    i += 1
 end
