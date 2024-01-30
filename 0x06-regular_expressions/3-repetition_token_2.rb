@@ -1,4 +1,5 @@
 #!/usr/bin/env ruby
 # Specific filter
 
-puts ARGV[0].scan(/hbt+n/).join
+k = ARGV[0].scan(/hbt+n/).join
+puts
