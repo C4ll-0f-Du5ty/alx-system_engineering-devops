@@ -3,8 +3,11 @@
 
 i = 0
 while ARGV[i]
-    if ARGV[i] =~ /School/
-        puts "School"
+    ARGV[i].split.each do |word|
+        if word == "School"
+            print "School"
+        end
     end
     i += 1
 end
+puts ""
