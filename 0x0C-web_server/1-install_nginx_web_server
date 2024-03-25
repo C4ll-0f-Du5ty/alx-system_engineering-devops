@@ -6,6 +6,8 @@ apt-get update
 # Install Nginx
 apt-get install -y nginx
 
+service nginx stop
+
 # allowing incoming Connections
 ufw allow 'Nginx HTTP'
 
