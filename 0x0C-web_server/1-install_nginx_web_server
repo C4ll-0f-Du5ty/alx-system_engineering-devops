@@ -4,11 +4,11 @@
 # Install Nginx
 apt-get install -y nginx
 
-# adding my Message
-echo "Hello World!" > /var/www/html/index.html
-
 # allowing incoming Connections
 ufw allow 'Nginx HTTP'
+
+# adding my Message
+echo "Hello World!" >/var/www/html/index.html
 
 # Starting my WebServer
 service nginx start
