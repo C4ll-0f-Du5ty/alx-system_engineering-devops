@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 # Configuring my WebServer and Making my first Get Request
 
+apt-get update
+
 # Install Nginx
 apt-get install -y nginx
 
