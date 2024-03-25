@@ -6,6 +6,7 @@ apt-get update
 # Install Nginx
 apt-get install -y nginx
 
+# Stoping my Service to configure
 service nginx stop
 
 # allowing incoming Connections
