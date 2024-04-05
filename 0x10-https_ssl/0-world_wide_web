@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+# Printing my Recoreds
+
+# grep -A (specifies how many lines after the "text" specified to be grapped as well)
+# sed "s/" for substitution
+# awk -F"specified" to fetch ech line alone
+# awk 'NR==2' to focus on the second line
+# awk '{print $number} (the column number to print)'
+
+if [ $# -eq 2 ]; then
+    dig "$2.$1" | grep -A1 "ANSWER SECTION:" | sed "s/$2.$1./$2/" | awk -F" " 'NR==2 {print "The subdomain " $1 " is a " $4 " record and points to " $5}'
+else
+    arr=("www" "lb-01" "web-01" "web-02")
+    for sub in "${arr[@]}"; do
+        dig "$sub.$1" | grep -A1 "ANSWER SECTION:" | sed "s/$sub.$1./$sub/g" | awk -F" " 'NR==2 {print "The subdomain " $1 " is a " $4 " record and points to " $5}'
+    done
+fi
