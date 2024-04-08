@@ -2,4 +2,4 @@
 # Configuring my Nginx to work on 80 port
 # The flag -s creates a symbolic link, -f deletes the existing file and replaces it
 sudo ln -sf /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
-sudo service nginx restartls
+sudo service nginx restart
