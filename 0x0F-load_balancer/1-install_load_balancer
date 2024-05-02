@@ -31,10 +31,10 @@ defaults
   timeout connect 10s
   timeout server 15s
   timeout http-request 10s
-frontend clickviral-tech-frontend
+frontend tech-frontend
     bind *:80
-    default_backend clickviral-tech-backend
-backend clickviral-tech-backend
+    default_backend tech-backend
+backend tech-backend
     balance roundrobin
     server 517713-web-01 54.145.156.142:80 check
     server 517713-web-02 54.146.89.30:80 check
