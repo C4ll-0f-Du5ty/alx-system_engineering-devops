@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+path='/etc/nginx/sites-available/default'
+sed -i '/server_name _;/a \
+location /redirect_me { \
+return 301 https://www.youtube.com/watch?v=QH2-TGUlwu4; \
+}' $path
+
+sudo service nginx restart
