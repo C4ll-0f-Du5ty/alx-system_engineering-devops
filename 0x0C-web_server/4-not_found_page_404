@@ -3,7 +3,13 @@
 apt-get update
 
 path="/etc/nginx/sites-available/default"
+target="https://www.youtube.com/watch?v=QH2-TGUlwu4"
 echo "Ceci n'est pas une page" >/var/www/html/404.html
+
+sed -i "/server_name _;/a \
+location /redirect_me { \
+return 301 $target; \
+}" $path
 
 sed -i "/server_name _;/a \
 error_page 404 /404.html; \
