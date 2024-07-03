@@ -18,6 +18,7 @@ return 301 $target; \
 }" $file
 
 # adding my Message
+touch /var/www/html/index.html
 echo "Hello World!" >/var/www/html/index.html
 
 # Starting my WebServer
