@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
-path='/etc/nginx/sites-available/default'
+
+apt-get update
+
+path="/etc/nginx/sites-available/default"
 echo "Ceci n'est pas une page" > /var/www/html/404.html
 
 sed -i "/server_name _;/a \
@@ -9,4 +12,5 @@ sed -i "/server_name _;/a \
         internal; \
     }" $path
 
-sudo service nginx restart
+# Starting my WebServer
+service nginx start
