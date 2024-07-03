@@ -3,13 +3,14 @@
 apt-get update
 
 path="/etc/nginx/sites-available/default"
-echo "Ceci n'est pas une page" > /var/www/html/404.html
+echo "Ceci n'est pas une page" >/var/www/html/404.html
 
 sed -i "/server_name _;/a \
     error_page 404 /404.html; \
     location /404 { \
         alias /var/www/html/404.html; \
         internal; \
+        return 404; \
     }" $path
 
 # Starting my WebServer
