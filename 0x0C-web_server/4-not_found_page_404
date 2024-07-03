@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+# Making my not found Default Page
 
 apt-get update
 
