@@ -36,8 +36,8 @@ frontend tech-frontend
     default_backend tech-backend
 backend tech-backend
     balance roundrobin
-    server 517713-web-01 54.145.156.142:80 check
-    server 517713-web-02 54.146.89.30:80 check
+    server 517713-web-01 100.25.35.0:80 check
+    server 517713-web-02 54.144.83.164:80 check
 "
 
 # shellcheck disable=SC2154
