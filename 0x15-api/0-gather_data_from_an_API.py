@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 import requests
 import sys
-
+"""Gathering Some information and Presenting them in specific foramt"""
 
 url = "https://jsonplaceholder.typicode.com/"
 employee_ID = sys.argv[1]
