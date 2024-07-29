@@ -25,4 +25,4 @@ if __name__ == "__main__":
           .format(r1.get('name'), len(completed), len(r2)))
 
     for t in completed:
-        print(f'\t {t}')
+        print('\t {}'.format(t))
