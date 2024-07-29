@@ -17,16 +17,10 @@ if __name__ == "__main__":
     response2 = requests.get(url + "/todos", params)
     r2 = response2.json()
 
-    Data = []
-    for r in r2:
-        D = '"{}","{}","{}","{}"'.format(employee_ID,
-                                         r1.get("username"),
-                                         r.get("completed"),
-                                         r.get("title"))
-        Data.append(D)
-
-    D = "\n".join(Data)
     file = f"{employee_ID}.csv"
     with open(file, mode='w', newline='', encoding='utf-8') as f:
-        f.write(D)
-        f.write("\n")
+        for r in r2:
+            f.write('"{}","{}","{}","{}"\n'.format(employee_ID,
+                                         r1.get("username"),
+                                         r.get("completed"),
+                                         r.get("title")))
