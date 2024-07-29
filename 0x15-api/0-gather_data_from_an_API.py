@@ -21,7 +21,8 @@ if __name__ == "__main__":
         if t.get('completed') is True:
             completed.append(t['title'])
 
-    print(f"Employee {r1.get('name')} is done with tasks({len(completed)}/{len(r2)}):")
+    print("Employee {} is done with tasks({}/{}):"
+          .format(r1.get('name'), len(completed), len(r2)))
 
     for t in completed:
         print(f'\t {t}')
