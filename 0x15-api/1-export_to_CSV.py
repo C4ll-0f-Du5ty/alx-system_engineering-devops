@@ -20,7 +20,8 @@ if __name__ == "__main__":
     file = f"{employee_ID}.csv"
     with open(file, mode='w', newline='', encoding='utf-8') as f:
         for r in r2:
-            f.write('"{}","{}","{}","{}"\n'.format(employee_ID,
-                                         r1.get("username"),
-                                         r.get("completed"),
-                                         r.get("title")))
+            f.write('"{}","{}","{}","{}"\n'
+                    .format(employee_ID,
+                            r1.get("username"),
+                            r.get("completed"),
+                            r.get("title")))
