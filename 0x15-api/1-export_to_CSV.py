@@ -20,9 +20,9 @@ if __name__ == "__main__":
     Data = []
     for r in r2:
         D = '"{}","{}","{}","{}"'.format(employee_ID,
-                                            r1.get("username"),
-                                            r.get("completed"),
-                                            r.get("title"))
+                                         r1.get("username"),
+                                         r.get("completed"),
+                                         r.get("title"))
         Data.append(D)
 
     D = "\n".join(Data)
