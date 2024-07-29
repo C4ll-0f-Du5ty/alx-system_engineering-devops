@@ -16,7 +16,7 @@ r2 = response2.json()
 completed = []
 
 for t in r2:
-    if t['completed'] is True:
+    if t.get('completed') is True:
         completed.append(t['title'])
 
 print(f"Employee {r1['name']} is done with tasks({len(completed)}/{len(r2)}):")
