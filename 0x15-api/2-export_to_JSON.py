@@ -19,12 +19,12 @@ if __name__ == "__main__":
 
     file = f"{employee_ID}.json"
     Data = ['{"task": ' + '"{2}", "completed": "{1}", "username": "{0}"'
-                    .format(r1.get("username"),
-                            r.get("completed"),
-                            r.get("title")) + '}' for r in r2 
-                    ]
+            .format(r1.get("username"),
+                    r.get("completed"),
+                    r.get("title")) + '}' for r in r2
+            ]
     D = ", ".join(Data)
     with open(file, mode='w', newline='', encoding='utf-8') as f:
-        f.write('{ "' + employee_ID +'": [')
+        f.write('{ "' + employee_ID + '": [')
         f.write(D)
         f.write(']}')
