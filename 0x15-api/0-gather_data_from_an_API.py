@@ -3,23 +3,26 @@ import requests
 import sys
 """Gathering Some information and Presenting them in specific foramt"""
 
-url = "https://jsonplaceholder.typicode.com/"
-employee_ID = sys.argv[1]
-response1 = requests.get(url + "users/" + employee_ID)
-r1 = response1.json()
+if __name__ == "__main__":
 
-params = {"userId": employee_ID}
+    url = "https://jsonplaceholder.typicode.com/"
+    employee_ID = sys.argv[1]
+    response1 = requests.get(url + "users/" + employee_ID)
+    r1 = response1.json()
 
-response2 = requests.get(url + "/todos", params)
-r2 = response2.json()
+    params = {"userId": employee_ID}
 
-completed = []
+    response2 = requests.get(url + "/todos", params)
+    r2 = response2.json()
 
-for t in r2:
-    if t.get('completed') is True:
-        completed.append(t['title'])
+    completed = []
 
-print(f"Employee {r1['name']} is done with tasks({len(completed)}/{len(r2)}):")
+    for t in r2:
+        if t.get('completed') is True:
+            completed.append(t['title'])
 
-for t in completed:
-    print(f'\t {t}')
+    print(f"Employee {r1['name']} is done with "
+          f"tasks({len(completed)}/{len(r2)}):")
+
+    for t in completed:
+        print(f'\t {t}')
