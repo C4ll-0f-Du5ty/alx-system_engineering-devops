@@ -25,6 +25,6 @@ if __name__ == "__main__":
             ]
     D = ", ".join(Data)
     with open(file, mode='w', newline='', encoding='utf-8') as f:
-        f.write('{ "' + employee_ID + '": [')
+        f.write('{"' + employee_ID + '": [')
         f.write(D)
         f.write(']}')
