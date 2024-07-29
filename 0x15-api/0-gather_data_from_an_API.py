@@ -1,7 +1,7 @@
 #!/usr/bin/python3
+"""Gathering Some information and Presenting them in specific foramt"""
 import requests
 import sys
-"""Gathering Some information and Presenting them in specific foramt"""
 
 if __name__ == "__main__":
 
