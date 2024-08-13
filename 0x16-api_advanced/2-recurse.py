@@ -5,16 +5,16 @@ listed for a given subreddit."""
 from requests import get
 
 
-def top_ten(subreddit):
+def recurse(subreddit, hot_list=[]):
     if subreddit is None or not isinstance(subreddit, str):
         return 0
 
     url = f"https://www.reddit.com/r/{subreddit}/hot.json"
-    params = {"limit": 9}
+    params = {"limit": 100}
     response = get(url, params=params)
     if response.status_code == 200:
         r2 = response.json().get("data").get("children")
         for r in r2:
             print(r.get("data").get("title"))
     else:
-        print("None")
+        return None
