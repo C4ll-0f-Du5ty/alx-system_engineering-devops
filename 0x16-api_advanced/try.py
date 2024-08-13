@@ -1,24 +1,24 @@
 #!/usr/bin/python3
 """Count the subscribers of some redit"""
+
+
 import requests
-import sys
 
 
 def number_of_subscribers(subreddit):
+    """Write a function that queries the Reddit API and
+    returns the number of subscribers (not active users,
+    total subscribers) for a given subreddit.
+    If an invalid subreddit is given, the function should return 0."""
+
     if subreddit is None or not isinstance(subreddit, str):
         return 0
 
-    url = f"https://www.reddit.com/r/{subreddit}/hot.json"
-    params = {"limit": 9}
-    response = requests.get(url, params=params)
+    response = requests.get(
+        f"https://www.reddit.com/r/{subreddit}/about.json",
+        allow_redirects=False)
+    r2 = response.json()
     if response.status_code == 200:
-        r2 = response.json().get("data")
-        print(r2[1])
-        # for r in r2.get("children"):
-        #     print(r.get("data").get("title"))
-if __name__ == '__main__':
-
-    if len(sys.argv) < 2:
-        print("Please pass an argument for the subreddit to search.")
+        return (r2.get("data").get("subscribers"))
     else:
-        number_of_subscribers(sys.argv[1])
+        return 0
