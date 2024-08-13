@@ -11,10 +11,11 @@ def recurse(subreddit, hot_list=[]):
 
     url = f"https://www.reddit.com/r/{subreddit}/hot.json"
     params = {"limit": 100}
-    response = get(url, params=params)
+    response = get(url, params=params, allow_redirects=False)
     if response.status_code == 200:
         r2 = response.json().get("data").get("children")
         for r in r2:
-            print(r.get("data").get("title"))
+            hot_list.append(r.get("data").get("title"))
+        return hot_list
     else:
         return None
