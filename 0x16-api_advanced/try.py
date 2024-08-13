@@ -8,14 +8,16 @@ def number_of_subscribers(subreddit):
     if subreddit is None or not isinstance(subreddit, str):
         return 0
 
-    response = requests.get(f"https://www.reddit.com/r/{subreddit}/about.json").json()
-    r = response.get("data")
-    return (r.get("subscribers"))
-
-
+    url = f"https://www.reddit.com/r/{subreddit}/hot.json"
+    params = {"limit": 9}
+    response = requests.get(url, params=params)
+    if response.status_code == 200:
+        r2 = response.json().get("data")
+        for r in r2.get("children"):
+            print(r.get("data").get("title"))
 if __name__ == '__main__':
 
     if len(sys.argv) < 2:
         print("Please pass an argument for the subreddit to search.")
     else:
-        print("{:d}".format(number_of_subscribers(sys.argv[1])))
+        number_of_subscribers(sys.argv[1])
