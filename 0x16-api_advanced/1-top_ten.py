@@ -6,6 +6,7 @@ from requests import get
 
 
 def top_ten(subreddit):
+    """Getting Top 10 Posts"""
     if subreddit is None or not isinstance(subreddit, str):
         return 0
 
