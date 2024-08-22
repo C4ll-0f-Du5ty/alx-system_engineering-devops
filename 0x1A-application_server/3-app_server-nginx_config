@@ -1,4 +1,4 @@
-Nginx should proxy requests to the route /airbnb-dynamic/number_odd_or_even/(any integer)
+# Nginx should proxy requests to the route /airbnb-dynamic/number_odd_or_even/(any integer)
 
 server {
         add_header X-Served-By 517713-web-01;
